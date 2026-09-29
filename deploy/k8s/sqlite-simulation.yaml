@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: continuous-inventory-data
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: continuous-inventory
+spec:
+  # SQLite permits one application replica against this volume. A future shared
+  # StatePort implementation is required before horizontal scaling.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: continuous-inventory
+  template:
+    metadata:
+      labels:
+        app: continuous-inventory
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        fsGroup: 1000
+      containers:
+        - name: api
+          image: continuous-inventory:dev
+          args: ["serve-demo", "--host", "0.0.0.0", "--port", "8765", "--workspace", "/data"]
+          ports:
+            - name: http
+              containerPort: 8765
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: continuous-inventory-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: continuous-inventory
+spec:
+  selector:
+    app: continuous-inventory
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

@@ -1,0 +1,633 @@
+{
+  "type": "isolated_simulation_not_production_evidence",
+  "provider": "deterministic-fixture-not-an-llm",
+  "passed": 6,
+  "total": 6,
+  "reports": [
+    {
+      "id": "lc-basic",
+      "capability": "landed_cost",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:allocated": true,
+          "state:target_added_cost": true,
+          "state:draft_status": true,
+          "prepared": true,
+          "approved": true,
+          "authoritative_confirmation": true,
+          "outcome_verified": true,
+          "execution_started": true,
+          "causal_authorization": true,
+          "version_bound_approval": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "landed_cost",
+        "answer": {
+          "status": "completed",
+          "rejected": false,
+          "observed": {
+            "allocated": "120.00",
+            "target_added_cost": "120.00",
+            "draft_status": "posted"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "e9a628644368bb7a5c1d5629d0617d98257372148de33726e5668f143360395f",
+              "kind": "landed_cost"
+            },
+            "at": "2026-09-27T14:41:54.640125+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "4027656d7f0800e8c7b9f79a65b6e05f642290271b01673ae315b97d8583eed3",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "freight-1",
+                "inventory-1"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.640149+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "e9a628644368bb7a5c1d5629d0617d98257372148de33726e5668f143360395f",
+              "at": "2026-09-27T14:41:54.640182+00:00"
+            },
+            "at": "2026-09-27T14:41:54.640203+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "e9a628644368bb7a5c1d5629d0617d98257372148de33726e5668f143360395f"
+            },
+            "at": "2026-09-27T14:41:54.640258+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_confirmed",
+            "body": {
+              "result": {
+                "transaction_id": "ica_plan_92e6ef55bcf04fedbf60aed285741305",
+                "type": "inventory_cost_allocation",
+                "status": "posted",
+                "costing_complete": true
+              },
+              "error": null
+            },
+            "at": "2026-09-27T14:41:54.640378+00:00"
+          },
+          {
+            "seq": 7,
+            "name": "verified",
+            "body": {
+              "checks": {
+                "transaction_posted": true,
+                "costing_complete": true,
+                "approved_bill_links": true
+              }
+            },
+            "at": "2026-09-27T14:41:54.640460+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    },
+    {
+      "id": "lc-lost-ack",
+      "capability": "landed_cost",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:allocated": true,
+          "state:target_added_cost": true,
+          "prepared": true,
+          "approved": true,
+          "authoritative_confirmation": true,
+          "outcome_verified": true,
+          "execution_started": true,
+          "causal_authorization": true,
+          "version_bound_approval": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "landed_cost",
+        "answer": {
+          "status": "completed",
+          "rejected": false,
+          "observed": {
+            "allocated": "120.00",
+            "target_added_cost": "120.00",
+            "draft_status": "posted"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "ea07815109db48c05879cf00922aedfd38b8fd6a348168e0a16c4e8ba05558e2",
+              "kind": "landed_cost"
+            },
+            "at": "2026-09-27T14:41:54.640786+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "4027656d7f0800e8c7b9f79a65b6e05f642290271b01673ae315b97d8583eed3",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "freight-1",
+                "inventory-1"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.640808+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "ea07815109db48c05879cf00922aedfd38b8fd6a348168e0a16c4e8ba05558e2",
+              "at": "2026-09-27T14:41:54.640840+00:00"
+            },
+            "at": "2026-09-27T14:41:54.640859+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "ea07815109db48c05879cf00922aedfd38b8fd6a348168e0a16c4e8ba05558e2"
+            },
+            "at": "2026-09-27T14:41:54.640913+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_unknown",
+            "body": {
+              "result": null,
+              "error": "Simulated acknowledgment lost after posting"
+            },
+            "at": "2026-09-27T14:41:54.641023+00:00"
+          },
+          {
+            "seq": 7,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "ea07815109db48c05879cf00922aedfd38b8fd6a348168e0a16c4e8ba05558e2"
+            },
+            "at": "2026-09-27T14:41:54.641081+00:00"
+          },
+          {
+            "seq": 8,
+            "name": "command_confirmed",
+            "body": {
+              "result": {
+                "transaction_id": "ica_plan_e5a7a8a3a141401885c1904e31d5ed3c",
+                "type": "inventory_cost_allocation",
+                "status": "posted",
+                "costing_complete": true
+              },
+              "error": null
+            },
+            "at": "2026-09-27T14:41:54.641146+00:00"
+          },
+          {
+            "seq": 9,
+            "name": "verified",
+            "body": {
+              "checks": {
+                "transaction_posted": true,
+                "costing_complete": true,
+                "approved_bill_links": true
+              }
+            },
+            "at": "2026-09-27T14:41:54.641235+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    },
+    {
+      "id": "lc-stale-review",
+      "capability": "landed_cost",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:allocated": true,
+          "state:target_added_cost": true,
+          "state:draft_status": true,
+          "no_post_confirmation": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "landed_cost",
+        "answer": {
+          "status": "exception",
+          "rejected": true,
+          "observed": {
+            "allocated": "0",
+            "target_added_cost": "0",
+            "draft_status": "draft"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "c5e9b1c6b01de7512f6648e3b1d513dd1b6824b5706f0f05b9e8c30b0684d162",
+              "kind": "landed_cost"
+            },
+            "at": "2026-09-27T14:41:54.641547+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "4027656d7f0800e8c7b9f79a65b6e05f642290271b01673ae315b97d8583eed3",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "freight-1",
+                "inventory-1"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.641568+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "c5e9b1c6b01de7512f6648e3b1d513dd1b6824b5706f0f05b9e8c30b0684d162",
+              "at": "2026-09-27T14:41:54.641603+00:00"
+            },
+            "at": "2026-09-27T14:41:54.641622+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "c5e9b1c6b01de7512f6648e3b1d513dd1b6824b5706f0f05b9e8c30b0684d162"
+            },
+            "at": "2026-09-27T14:41:54.641703+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_rejected",
+            "body": {
+              "result": null,
+              "error": "Draft changed after approval"
+            },
+            "at": "2026-09-27T14:41:54.641779+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    },
+    {
+      "id": "mo-basic",
+      "capability": "manufacturing",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:source_quantity": true,
+          "state:source_protected": true,
+          "state:destination_quantity": true,
+          "prepared": true,
+          "approved": true,
+          "authoritative_confirmation": true,
+          "outcome_verified": true,
+          "execution_started": true,
+          "causal_authorization": true,
+          "version_bound_approval": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "manufacturing",
+        "answer": {
+          "status": "completed",
+          "rejected": false,
+          "observed": {
+            "source_quantity": "80",
+            "source_protected": "30",
+            "destination_quantity": "25"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "9194a6a24b5a1ff4750065edceba5f26cfadbf65e9bac7c3261650b0c82409ab",
+              "kind": "manufacturing"
+            },
+            "at": "2026-09-27T14:41:54.642077+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "29ba0dfe870273fecd585233d16240d0acf4afd6399578e728db6a4cdb9ccd4b",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "warehouse",
+                "factory",
+                "MO-1",
+                "process"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.642109+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "9194a6a24b5a1ff4750065edceba5f26cfadbf65e9bac7c3261650b0c82409ab",
+              "at": "2026-09-27T14:41:54.642166+00:00"
+            },
+            "at": "2026-09-27T14:41:54.642196+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "9194a6a24b5a1ff4750065edceba5f26cfadbf65e9bac7c3261650b0c82409ab"
+            },
+            "at": "2026-09-27T14:41:54.642273+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_confirmed",
+            "body": {
+              "result": {
+                "transaction_id": "transfer_c6eadac7901e4cfe98af396827ee552c",
+                "type": "transfer",
+                "status": "in_transit"
+              },
+              "error": null
+            },
+            "at": "2026-09-27T14:41:54.642391+00:00"
+          },
+          {
+            "seq": 7,
+            "name": "verified",
+            "body": {
+              "checks": {
+                "physical_receipt": true,
+                "material_ready": true
+              }
+            },
+            "at": "2026-09-27T14:41:54.642533+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    },
+    {
+      "id": "mo-lost-ack",
+      "capability": "manufacturing",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:source_quantity": true,
+          "state:destination_quantity": true,
+          "prepared": true,
+          "approved": true,
+          "authoritative_confirmation": true,
+          "outcome_verified": true,
+          "execution_started": true,
+          "causal_authorization": true,
+          "version_bound_approval": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "manufacturing",
+        "answer": {
+          "status": "completed",
+          "rejected": false,
+          "observed": {
+            "source_quantity": "80",
+            "source_protected": "30",
+            "destination_quantity": "25"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "8b670501f9401d5e7ae239ff096a6c6efcf5621c2971fe4a54c53d3c203088e2",
+              "kind": "manufacturing"
+            },
+            "at": "2026-09-27T14:41:54.642783+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "d4fbbfa0517f276404c8d42b60f1f32eb39f75eef1185a6624de893da6336c71",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "warehouse",
+                "factory",
+                "MO-1",
+                "process"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.642809+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "8b670501f9401d5e7ae239ff096a6c6efcf5621c2971fe4a54c53d3c203088e2",
+              "at": "2026-09-27T14:41:54.642848+00:00"
+            },
+            "at": "2026-09-27T14:41:54.642878+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "8b670501f9401d5e7ae239ff096a6c6efcf5621c2971fe4a54c53d3c203088e2"
+            },
+            "at": "2026-09-27T14:41:54.642953+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_unknown",
+            "body": {
+              "result": null,
+              "error": "Simulated acknowledgment lost after transfer dispatch"
+            },
+            "at": "2026-09-27T14:41:54.643067+00:00"
+          },
+          {
+            "seq": 7,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "8b670501f9401d5e7ae239ff096a6c6efcf5621c2971fe4a54c53d3c203088e2"
+            },
+            "at": "2026-09-27T14:41:54.643144+00:00"
+          },
+          {
+            "seq": 8,
+            "name": "command_confirmed",
+            "body": {
+              "result": {
+                "transaction_id": "transfer_a6ba712f732344d5be00cf9c649c62d0",
+                "type": "transfer",
+                "status": "in_transit"
+              },
+              "error": null
+            },
+            "at": "2026-09-27T14:41:54.643228+00:00"
+          },
+          {
+            "seq": 9,
+            "name": "verified",
+            "body": {
+              "checks": {
+                "physical_receipt": true,
+                "material_ready": true
+              }
+            },
+            "at": "2026-09-27T14:41:54.643372+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    },
+    {
+      "id": "mo-partial-receipt",
+      "capability": "manufacturing",
+      "verdict": {
+        "reward": 1.0,
+        "checks": {
+          "status": true,
+          "state:source_quantity": true,
+          "state:destination_quantity": true
+        },
+        "failure_tags": []
+      },
+      "output": {
+        "capability": "manufacturing",
+        "answer": {
+          "status": "verifying",
+          "rejected": false,
+          "observed": {
+            "source_quantity": "80",
+            "source_protected": "30",
+            "destination_quantity": "15"
+          }
+        },
+        "trace": [
+          {
+            "seq": 2,
+            "name": "prepared",
+            "body": {
+              "plan_hash": "a35061eb3e7fa2d730d88d3dd58c156a1c6eb96e46b0f308c3fd707e5440e398",
+              "kind": "manufacturing"
+            },
+            "at": "2026-09-27T14:41:54.643642+00:00"
+          },
+          {
+            "seq": 3,
+            "name": "agent_decision",
+            "body": {
+              "provider": "deterministic-fixture-not-an-llm",
+              "context_hash": "a68705c8909b3a5301f58d80b0ef7c214b9ee9287d63b6db931515a9bee5e457",
+              "reason": "First independently validated option (offline fixture)",
+              "evidence_ids": [
+                "warehouse",
+                "factory",
+                "MO-1",
+                "process"
+              ]
+            },
+            "at": "2026-09-27T14:41:54.643668+00:00"
+          },
+          {
+            "seq": 4,
+            "name": "approved",
+            "body": {
+              "actor": "local-operator",
+              "plan_hash": "a35061eb3e7fa2d730d88d3dd58c156a1c6eb96e46b0f308c3fd707e5440e398",
+              "at": "2026-09-27T14:41:54.643707+00:00"
+            },
+            "at": "2026-09-27T14:41:54.643735+00:00"
+          },
+          {
+            "seq": 5,
+            "name": "execution_started",
+            "body": {
+              "plan_hash": "a35061eb3e7fa2d730d88d3dd58c156a1c6eb96e46b0f308c3fd707e5440e398"
+            },
+            "at": "2026-09-27T14:41:54.643810+00:00"
+          },
+          {
+            "seq": 6,
+            "name": "command_confirmed",
+            "body": {
+              "result": {
+                "transaction_id": "transfer_097efd8d32454f57984ad378ebe6cd94",
+                "type": "transfer",
+                "status": "in_transit"
+              },
+              "error": null
+            },
+            "at": "2026-09-27T14:41:54.643928+00:00"
+          },
+          {
+            "seq": 7,
+            "name": "verification_pending",
+            "body": {
+              "checks": {
+                "physical_receipt": false,
+                "material_ready": false
+              }
+            },
+            "at": "2026-09-27T14:41:54.644068+00:00"
+          }
+        ],
+        "policy_tokens": 0,
+        "provider": "deterministic-fixture-not-an-llm"
+      }
+    }
+  ]
+}

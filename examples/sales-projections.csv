@@ -1,0 +1,3 @@
+external_id,item,location,quantity,uom,date
+forecast-A-2026-10-01,SKU-A,MAIN,150,each,2026-10-01
+forecast-A-2026-10-02,SKU-A,MAIN,180,each,2026-10-02

@@ -1,0 +1,8 @@
+[
+  {"id":"lc-basic","capability":"landed_cost","input":{},"expected":{"status":"completed","observed":{"allocated":"120","target_added_cost":"120","draft_status":"posted"}}},
+  {"id":"lc-lost-ack","capability":"landed_cost","input":{"fault":"lost_ack"},"expected":{"status":"completed","observed":{"allocated":"120","target_added_cost":"120"}}},
+  {"id":"lc-stale-review","capability":"landed_cost","input":{"fault":"stale_draft"},"expected":{"status":"exception","observed":{"allocated":"0","target_added_cost":"0","draft_status":"draft"}}},
+  {"id":"mo-basic","capability":"manufacturing","input":{},"expected":{"status":"completed","observed":{"source_quantity":"80","source_protected":"30","destination_quantity":"25"}}},
+  {"id":"mo-lost-ack","capability":"manufacturing","input":{"fault":"lost_ack"},"expected":{"status":"completed","observed":{"source_quantity":"80","destination_quantity":"25"}}},
+  {"id":"mo-partial-receipt","capability":"manufacturing","input":{"fault":"partial_receipt"},"expected":{"status":"verifying","observed":{"source_quantity":"80","destination_quantity":"15"}}}
+]

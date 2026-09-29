@@ -1,0 +1,339 @@
+{
+  "mode": "SIMULATION ONLY \u2014 local persistence when --workspace is supplied",
+  "provider": "deterministic-fixture-not-an-llm",
+  "outcomes": [
+    {
+      "plan": {
+        "id": "plan_ff574aa684d2480ab23290a6603acc3d",
+        "version": 7,
+        "kind": "landed_cost",
+        "payload": {
+          "draft_id": "ica_plan_ff574aa684d2480ab23290a6603acc3d",
+          "draft_version": 1,
+          "source": "freight-1",
+          "allocations": [
+            {
+              "bill_id": "inventory-1",
+              "amount": "120.00"
+            }
+          ],
+          "currency": "USD"
+        },
+        "expected": {
+          "freight-1": 1,
+          "inventory-1": 1
+        },
+        "objective": "Post reviewed Inventory Cost Allocation and verify cost completion",
+        "status": "completed",
+        "preparation_hash": "8f1aedb85565afa74005ffcf81acf8708cb4e9b8b5c18d6db6f5206403f10cfd",
+        "rule_context": null,
+        "evidence": [
+          {
+            "id": "freight-1",
+            "kind": "source_bill",
+            "version": 1
+          },
+          {
+            "id": "inventory-1",
+            "kind": "inventory_bill",
+            "version": 1
+          }
+        ],
+        "approval": {
+          "actor": "local-operator",
+          "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6",
+          "at": "2026-09-27T14:41:54.581795+00:00"
+        },
+        "expires_at": "2026-09-28T14:41:54.581033+00:00",
+        "result": {
+          "transaction_id": "ica_plan_ff574aa684d2480ab23290a6603acc3d",
+          "type": "inventory_cost_allocation",
+          "status": "posted",
+          "costing_complete": true
+        },
+        "error": null,
+        "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6",
+        "verification": {
+          "checks": {
+            "transaction_posted": true,
+            "costing_complete": true,
+            "approved_bill_links": true
+          },
+          "at": "2026-09-27T14:41:54.582318+00:00",
+          "scope": "simulated posting and costing"
+        }
+      },
+      "before_physical_receipt": "completed",
+      "trace": [
+        {
+          "seq": 2,
+          "name": "prepared",
+          "body": {
+            "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6",
+            "kind": "landed_cost"
+          },
+          "at": "2026-09-27T14:41:54.581079+00:00"
+        },
+        {
+          "seq": 3,
+          "name": "agent_decision",
+          "body": {
+            "provider": "deterministic-fixture-not-an-llm",
+            "context_hash": "4027656d7f0800e8c7b9f79a65b6e05f642290271b01673ae315b97d8583eed3",
+            "reason": "First independently validated option (offline fixture)",
+            "evidence_ids": [
+              "freight-1",
+              "inventory-1"
+            ]
+          },
+          "at": "2026-09-27T14:41:54.581106+00:00"
+        },
+        {
+          "seq": 6,
+          "name": "approved",
+          "body": {
+            "actor": "local-operator",
+            "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6",
+            "at": "2026-09-27T14:41:54.581795+00:00"
+          },
+          "at": "2026-09-27T14:41:54.581819+00:00"
+        },
+        {
+          "seq": 7,
+          "name": "execution_started",
+          "body": {
+            "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6"
+          },
+          "at": "2026-09-27T14:41:54.581902+00:00"
+        },
+        {
+          "seq": 8,
+          "name": "command_unknown",
+          "body": {
+            "result": null,
+            "error": "Simulated acknowledgment lost after posting"
+          },
+          "at": "2026-09-27T14:41:54.582054+00:00"
+        },
+        {
+          "seq": 9,
+          "name": "execution_started",
+          "body": {
+            "plan_hash": "a8c7b793de94bc80070e28165b20485de6ff2120a50722b337b6cfb137876ac6"
+          },
+          "at": "2026-09-27T14:41:54.582142+00:00"
+        },
+        {
+          "seq": 10,
+          "name": "command_confirmed",
+          "body": {
+            "result": {
+              "transaction_id": "ica_plan_ff574aa684d2480ab23290a6603acc3d",
+              "type": "inventory_cost_allocation",
+              "status": "posted",
+              "costing_complete": true
+            },
+            "error": null
+          },
+          "at": "2026-09-27T14:41:54.582233+00:00"
+        },
+        {
+          "seq": 11,
+          "name": "verified",
+          "body": {
+            "checks": {
+              "transaction_posted": true,
+              "costing_complete": true,
+              "approved_bill_links": true
+            }
+          },
+          "at": "2026-09-27T14:41:54.582347+00:00"
+        }
+      ]
+    },
+    {
+      "plan": {
+        "id": "plan_0667dcd48acc480197d8f4e0b56405c4",
+        "version": 8,
+        "kind": "manufacturing",
+        "payload": {
+          "source": "warehouse",
+          "destination": "factory",
+          "item": "component-A",
+          "quantity": "20",
+          "required": "25",
+          "manufacturing_order": "MO-1"
+        },
+        "expected": {
+          "warehouse": 1,
+          "factory": 1
+        },
+        "objective": "Confirm uncommitted destination material covers the linked manufacturing requirement",
+        "status": "completed",
+        "preparation_hash": "4bd33f071806f288fbda8652ccdd66756e574b58cfc1399f00f4275af506de3a",
+        "rule_context": {
+          "item": "component-A",
+          "day": "2026-09-27",
+          "case_id": "MO-1",
+          "resolved": {
+            "mode": "order_driven",
+            "batch_limit": null,
+            "rule_versions": {
+              "rule_06b2300ab060415b95a135db57d39163": 1
+            },
+            "needs_teaching": false
+          }
+        },
+        "evidence": [
+          {
+            "id": "factory",
+            "kind": "stock",
+            "version": 1
+          },
+          {
+            "id": "MO-1",
+            "kind": "customer_supplied_requirement",
+            "required": "25"
+          },
+          {
+            "id": "process",
+            "kind": "declared_rules",
+            "resolved": {
+              "mode": "order_driven",
+              "batch_limit": null,
+              "rule_versions": {
+                "rule_06b2300ab060415b95a135db57d39163": 1
+              },
+              "needs_teaching": false
+            }
+          },
+          {
+            "id": "warehouse",
+            "kind": "stock",
+            "version": 1,
+            "available": "70"
+          }
+        ],
+        "approval": {
+          "actor": "local-operator",
+          "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e",
+          "at": "2026-09-27T14:41:54.582456+00:00"
+        },
+        "expires_at": "2026-09-28T14:41:54.581172+00:00",
+        "result": {
+          "transaction_id": "transfer_2d1fb03c4d2747e096374c2e53b1a8b6",
+          "type": "transfer",
+          "status": "in_transit"
+        },
+        "error": null,
+        "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e",
+        "verification": {
+          "checks": {
+            "physical_receipt": true,
+            "material_ready": true
+          },
+          "at": "2026-09-27T14:41:54.583374+00:00",
+          "scope": "simulated single-component material readiness; no production release"
+        }
+      },
+      "before_physical_receipt": "verifying",
+      "trace": [
+        {
+          "seq": 4,
+          "name": "prepared",
+          "body": {
+            "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e",
+            "kind": "manufacturing"
+          },
+          "at": "2026-09-27T14:41:54.581676+00:00"
+        },
+        {
+          "seq": 5,
+          "name": "agent_decision",
+          "body": {
+            "provider": "deterministic-fixture-not-an-llm",
+            "context_hash": "df1b1d247b108b00ce84939c5b8e51e57eaccf8b751bedac0561d8f32167383f",
+            "reason": "First independently validated option (offline fixture)",
+            "evidence_ids": [
+              "warehouse",
+              "factory",
+              "MO-1",
+              "process"
+            ]
+          },
+          "at": "2026-09-27T14:41:54.581735+00:00"
+        },
+        {
+          "seq": 12,
+          "name": "approved",
+          "body": {
+            "actor": "local-operator",
+            "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e",
+            "at": "2026-09-27T14:41:54.582456+00:00"
+          },
+          "at": "2026-09-27T14:41:54.582489+00:00"
+        },
+        {
+          "seq": 13,
+          "name": "execution_started",
+          "body": {
+            "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e"
+          },
+          "at": "2026-09-27T14:41:54.582611+00:00"
+        },
+        {
+          "seq": 14,
+          "name": "command_unknown",
+          "body": {
+            "result": null,
+            "error": "Simulated acknowledgment lost after transfer dispatch"
+          },
+          "at": "2026-09-27T14:41:54.582785+00:00"
+        },
+        {
+          "seq": 15,
+          "name": "execution_started",
+          "body": {
+            "plan_hash": "409363da44f632966752ee2d7f1d1d0100f8612aa84733c89765a5f1d9e7b98e"
+          },
+          "at": "2026-09-27T14:41:54.582906+00:00"
+        },
+        {
+          "seq": 16,
+          "name": "command_confirmed",
+          "body": {
+            "result": {
+              "transaction_id": "transfer_2d1fb03c4d2747e096374c2e53b1a8b6",
+              "type": "transfer",
+              "status": "in_transit"
+            },
+            "error": null
+          },
+          "at": "2026-09-27T14:41:54.583040+00:00"
+        },
+        {
+          "seq": 17,
+          "name": "verification_pending",
+          "body": {
+            "checks": {
+              "physical_receipt": false,
+              "material_ready": false
+            }
+          },
+          "at": "2026-09-27T14:41:54.583199+00:00"
+        },
+        {
+          "seq": 18,
+          "name": "verified",
+          "body": {
+            "checks": {
+              "physical_receipt": true,
+              "material_ready": true
+            }
+          },
+          "at": "2026-09-27T14:41:54.583413+00:00"
+        }
+      ]
+    }
+  ]
+}

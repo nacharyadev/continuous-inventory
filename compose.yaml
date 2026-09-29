@@ -1,0 +1,20 @@
+services:
+  continuous-inventory:
+    build:
+      context: .
+      dockerfile: Containerfile
+    ports:
+      - "8765:8765"
+    volumes:
+      - continuous-inventory-data:/data
+    environment:
+      CI_MODEL_GATEWAY_URL: ${CI_MODEL_GATEWAY_URL:-}
+      CI_MODEL_GATEWAY_TOKEN: ${CI_MODEL_GATEWAY_TOKEN:-}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  continuous-inventory-data: {}

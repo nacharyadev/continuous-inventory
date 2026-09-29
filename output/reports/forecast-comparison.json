@@ -1,0 +1,121 @@
+{
+  "candidates": [
+    {
+      "algorithm": "naive",
+      "eligible": true,
+      "folds": [
+        {
+          "train_end": 3,
+          "forecast": [
+            "11"
+          ],
+          "actual": [
+            "15"
+          ]
+        },
+        {
+          "train_end": 4,
+          "forecast": [
+            "15"
+          ],
+          "actual": [
+            "14"
+          ]
+        },
+        {
+          "train_end": 5,
+          "forecast": [
+            "14"
+          ],
+          "actual": [
+            "18"
+          ]
+        }
+      ],
+      "mae": "3",
+      "bias": "-2.333333333333333333333333333",
+      "wape": "0.1914893617021276595744680851"
+    },
+    {
+      "algorithm": "moving_average",
+      "parameters": {
+        "window": 3
+      },
+      "eligible": true,
+      "folds": [
+        {
+          "train_end": 3,
+          "forecast": [
+            "11"
+          ],
+          "actual": [
+            "15"
+          ]
+        },
+        {
+          "train_end": 4,
+          "forecast": [
+            "12.66666666666666666666666667"
+          ],
+          "actual": [
+            "14"
+          ]
+        },
+        {
+          "train_end": 5,
+          "forecast": [
+            "13.33333333333333333333333333"
+          ],
+          "actual": [
+            "18"
+          ]
+        }
+      ],
+      "mae": "3.333333333333333333333333333",
+      "bias": "-3.333333333333333333333333333",
+      "wape": "0.2127659574468085106382978723"
+    },
+    {
+      "algorithm": "exponential_smoothing",
+      "parameters": {
+        "alpha": "0.3"
+      },
+      "eligible": true,
+      "folds": [
+        {
+          "train_end": 3,
+          "forecast": [
+            "10.72"
+          ],
+          "actual": [
+            "15"
+          ]
+        },
+        {
+          "train_end": 4,
+          "forecast": [
+            "12.004"
+          ],
+          "actual": [
+            "14"
+          ]
+        },
+        {
+          "train_end": 5,
+          "forecast": [
+            "12.6028"
+          ],
+          "actual": [
+            "18"
+          ]
+        }
+      ],
+      "mae": "3.891066666666666666666666667",
+      "bias": "-3.891066666666666666666666667",
+      "wape": "0.2483659574468085106382978723"
+    }
+  ],
+  "recommended_algorithm": "naive",
+  "activated": false,
+  "note": "All eligible candidates evaluated on the same origins; selection evidence is not an untouched final holdout."
+}
